@@ -28,7 +28,9 @@ function load(file, options={}) {
     try {
       result = specificLoader(`${file}.${specificLoader.defaultExtension}`)
       return true // stop trying when successful
-    } catch {}
+    } catch (error) {
+      // most likely a file not found error
+    }
   })
   return result
 }
