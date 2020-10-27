@@ -14,30 +14,30 @@ const parsers = {
     ini: parseIni,
   }
 import {loadCjs} from './cjs.js'
-// import esm from './esm'
+import esm from './esm.cjs'
 
 const yaml = parserToLoader(parsers.yaml)
 const json5 = parserToLoader(parsers.json5)
 const toml = parserToLoader(parsers.toml)
 const ini = parserToLoader(parsers.ini)
 const json = parserToLoader(parsers.json)
-// const js = esm
+const js = esm
 
 yaml.defaultExtension = 'yaml'
 json5.defaultExtension = 'json5'
 toml.defaultExtension = 'toml'
 ini.defaultExtension = 'ini'
 json.defaultExtension = 'json'
-// js.defaultExtension = 'js'
+js.defaultExtension = 'js'
 
 const all = [
-    //esm,
-     yaml, json5, toml,
-    //  js,
+    esm,
+    yaml, json5, toml,
+    js,
     loadCjs, json, ini]
 
 export {
-    //esm,
-     yaml, json5, toml,
-    //  js,
+    esm,
+    yaml, json5, toml,
+    js,
     loadCjs as cjs, json, ini, all}
