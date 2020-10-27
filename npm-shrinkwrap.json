@@ -1,6 +1,6 @@
 {
   "name": "@grossacasacs/left-phalange",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -562,7 +562,8 @@
     "ansi-colors": {
       "version": "4.1.1",
       "resolved": "https://registry.npmjs.org/ansi-colors/-/ansi-colors-4.1.1.tgz",
-      "integrity": "sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA=="
+      "integrity": "sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==",
+      "dev": true
     },
     "ansi-regex": {
       "version": "5.0.0",
