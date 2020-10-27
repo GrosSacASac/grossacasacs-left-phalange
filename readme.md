@@ -11,7 +11,7 @@ npm i @grossacasacs/left-phalange
 ## Usage
 
 ```js
-import {parse, load, stringify} from '@grossacasacs/left-phalange'
+import {parse, load, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
 ```
 
 ### load(file[, options])
