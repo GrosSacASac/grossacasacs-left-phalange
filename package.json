@@ -29,7 +29,7 @@
     "lint": "eslint \"**/*.{js,mjs}\"",
     "test": "ava",
     "test-coverage": "nyc ava",
-    "release": "run-s clean build test"
+    "prepublishOnly": "run-s clean build test"
   },
   "ava": {
     "files": [
