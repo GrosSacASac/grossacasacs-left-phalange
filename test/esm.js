@@ -1,5 +1,4 @@
-import {outdent} from 'outdent'
-import testRunner from './helpers/test-runner'
+import testRunner from './helpers/test-runner.js'
 
 const data = {left: 'phalange'}
 
@@ -8,11 +7,9 @@ const testObject = {
   filename: 'data.mjs',
   data,
   string: "export default {left:'phalange'};",
-  prettyString: outdent`
-    export default {
-      left: 'phalange',
-    };
-  `,
+  prettyString: `export default {
+  left: 'phalange',
+};`,
   malformed: 'left: [phalange',
   skip: {
     parse: true,

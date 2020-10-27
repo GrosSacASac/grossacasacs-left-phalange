@@ -1,6 +1,6 @@
 import {sync as temporaryWrite} from 'temp-write'
 import {parse as parsePath, format as formatPath} from 'path'
-import {load} from '../../src'
+import {load} from '../../src/index.js'
 
 function loadFileFromStringExtensionLess(string, fileName, options) {
   const file = temporaryWrite(string, fileName)
