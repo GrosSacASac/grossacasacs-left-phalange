@@ -8,7 +8,6 @@ function loadFileFromStringExtensionLess(string, fileName, options) {
   const parsed = parsePath(file)
   parsed.ext = ''
   const extensionLess = formatPath(parsed)
-  console.log(extensionLess);
   return load(extensionLess, options)
 }
 

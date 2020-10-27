@@ -1,9 +1,10 @@
 
 
-export {load}
+export {load, supportedExtensions}
 
 import {parse as parseFile} from 'path'
 import * as loader from './loader/index.js'
+import { supportedExtensions } from './loader/index.js'
 import {getFileType} from './utils/get-file-type.js'
 
 function load(file, options={}) {

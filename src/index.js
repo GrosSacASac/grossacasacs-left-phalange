@@ -1,5 +1,3 @@
-export {load, parse, stringify}
-
-import {load} from './load.js'
-import {parse} from './parse.js'
-import {stringify} from './stringify.js'
+export {load, supportedExtensions} from './load.js'
+export {parse} from './parse.js'
+export {stringify} from './stringify.js'

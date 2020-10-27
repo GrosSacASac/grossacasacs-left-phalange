@@ -7,12 +7,12 @@ import {parseToml} from '../parser/toml.js'
 import {parseIni} from '../parser/ini.js'
 
 const parsers = {
-    yaml: parseYaml,
-    json5:parseJson5,
-    json: parseJson,
-    toml: parseToml,
-    ini: parseIni,
-  }
+  yaml: parseYaml,
+  json5:parseJson5,
+  json: parseJson,
+  toml: parseToml,
+  ini: parseIni,
+}
 import {loadCjs} from './cjs.js'
 import esm from './esm.cjs'
 
@@ -31,13 +31,29 @@ json.defaultExtension = 'json'
 js.defaultExtension = 'js'
 
 const all = [
-    esm,
-    yaml, json5, toml,
-    js,
-    loadCjs, json, ini]
+  esm,
+  js,
+  yaml,
+  json5,
+  toml,
+  loadCjs,
+  json,
+  ini,
+]
+
+const supportedExtensions =  all.map(loader => {
+  return loader.defaultExtension;
+}).filter(Boolean);
 
 export {
     esm,
-    yaml, json5, toml,
     js,
-    loadCjs as cjs, json, ini, all}
+    yaml,
+    json5,
+    toml,
+    loadCjs as cjs,
+    json,
+    ini,
+    all,
+    supportedExtensions
+}
