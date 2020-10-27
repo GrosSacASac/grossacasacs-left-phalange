@@ -14,8 +14,13 @@
     "stringify"
   ],
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "src/index.mjs",
+  "main": "./dist/index.js",
+  "exports": {
+    "import": "./src/index.js",
+    "require": "./dist/index.js",
+    "browser": null,
+    "deno": null
+  },
   "files": [
     "dist",
     "src",
@@ -73,5 +78,9 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/GrosSacASac/grossacasacs-left-phalange.git"
   }
 }
