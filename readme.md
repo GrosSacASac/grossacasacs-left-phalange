@@ -1,17 +1,17 @@
-# left-phalange-api
+# @grossacasacs/left-phalange
 
-> CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier
+CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier
 
 ## Install
 
 ```sh
-yarn add left-phalange-api
+npm i @grossacasacs/left-phalange
 ```
 
 ## Usage
 
 ```js
-import {parse, load, stringify} from 'left-phalange-api'
+import {parse, load, stringify} from '@grossacasacs/left-phalange'
 ```
 
 ### load(file[, options])
