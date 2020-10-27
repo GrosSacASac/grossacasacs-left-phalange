@@ -20,7 +20,8 @@
     "dist",
     "src",
     "license",
-    "readme.md"
+    "readme.md",
+    "changelog.md"
   ],
   "scripts": {
     "build": "rollup --config",

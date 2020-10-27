@@ -16,6 +16,8 @@ import {parse, load, stringify} from 'left-phalange-api'
 
 ### load(file[, options])
 
+Loading from a file
+
 - file
   - Data file path to load
 - options
@@ -31,6 +33,8 @@ import {parse, load, stringify} from 'left-phalange-api'
 examples:
 
 ```js
+load('path/to/data')
+
 load('path/to/data.json')
 
 load('path/to/data', 'yaml')
@@ -39,6 +43,8 @@ load('path/to/data', {type: 'toml'})
 ```
 
 ### parse(string[, options])
+
+Parsing from a string
 
 - string
   - type: `String`
@@ -69,6 +75,8 @@ parse('left = phalange', {filename: 'path/to/data.yml'})
 ```
 
 ### stringify(data[, options])
+
+Creating a string from an object
 
 - data
   - Data to stringify
@@ -107,6 +115,11 @@ stringify({left: 'phalange'}, {type: 'json5', pretty: true})
 //   left: 'phalange',
 // }
 ```
+
+## Changelog
+
+[Changelog](./changelog.md)
+
 
 ## Related
 
