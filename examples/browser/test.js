@@ -1,9 +1,9 @@
 // import { parse } from "../../src/index.js";
-import { parse } from "../../dist/browser.js";
+import { parse, stringify } from "../../dist/browser.es.js";
 
 const yamls = `---
 defaultLang: fr
-defaultAuthor: Cyril Walle
+defaultAuthor: Me
 defaultLicense: CC-BY-NC-4.0
 mainTitle: "\U0001F392"
 tabTitle: Le sac
@@ -11,17 +11,11 @@ subTitle: Software, Culture, Politics
 categories:
 - tag: travel
   name: Travel
-- tag: luxembourg
-- tag: europe
 `
 const tomls = `
 # This is a TOML document
 
 title = "TOML Example"
-
-[owner]
-name = "Tom Preston-Werner"
-dob = 1979-05-27T07:32:00-08:00
 
 [database]
 enabled = true
@@ -41,4 +35,5 @@ role = "backend"
 `
 console.log(parse(yamls, `yaml`));
 console.log(parse(tomls, `toml`));
+console.log(stringify(parse(yamls, `yaml`), `toml`));
 

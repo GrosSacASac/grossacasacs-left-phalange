@@ -12,7 +12,7 @@ export default [
     input: 'src/index.js',
     output: [
       {
-        file: 'dist/index.js',
+        file: 'dist/index.cjs',
         format: 'cjs',
       },
     ],
@@ -23,7 +23,7 @@ export default [
     input: 'src/browser.js',
     output: [
         {
-            file: 'dist/browser.js',
+            file: 'dist/browser.es.js',
             format: 'esm',
           },
     ],

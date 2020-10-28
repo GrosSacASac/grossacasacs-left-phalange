@@ -3,6 +3,7 @@
 ## 3.0.0
 
  * Remove filename option from parse
+ * Works in the browser
 
 
 ## 2.1.0

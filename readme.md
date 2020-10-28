@@ -2,6 +2,10 @@
 
 CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier
 
+## Platforms
+
+Node, Web
+
 ## Install
 
 ```sh
@@ -11,12 +15,16 @@ npm i @grossacasacs/left-phalange
 ## Usage
 
 ```js
+// Node
 import {parse, load, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
+// Web
+import {parse, stringify} from '@grossacasacs/left-phalange' // should resolve to /dist/browser.js
+
 ```
 
 ### load(file[, options])
 
-Loading from a file
+__Node Only__ Loading from a file
 
 - file
   - Data file path to load
