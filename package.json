@@ -41,10 +41,7 @@
         "files": [
             "test/*"
         ],
-        "require": [
-            "esm"
-        ],
-        "verbose": true
+        "require": []
     },
     "nyc": {
         "include": [
@@ -53,8 +50,7 @@
         "reporter": [
             "lcov",
             "text"
-        ],
-        "require": "esm"
+        ]
     },
     "files": [
         "dist",
