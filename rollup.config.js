@@ -1,8 +1,7 @@
 import cjs from '@rollup/plugin-commonjs'
-import json from '@rollup/plugin-json'
 import {dependencies} from './package.json'
 
-const plugins = [cjs(), json()]
+const plugins = [cjs()]
 
 const external = ['path', 'fs', ...Object.keys(dependencies)]
 
