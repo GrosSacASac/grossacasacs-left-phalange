@@ -8,7 +8,6 @@ import {stringifyToml} from './stringifier/toml.js'
 import {stringifyIni} from './stringifier/ini.js'
 import {stringifyCjs} from './stringifier/cjs.js'
 import {stringifyEsm} from './stringifier/esm.js'
-import {getFileType} from './utils/get-file-type.js'
 
 const stringifier = {
   yaml: stringifyYaml,
