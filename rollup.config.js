@@ -1,4 +1,5 @@
 import cjs from '@rollup/plugin-commonjs'
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import {dependencies} from './package.json'
 
@@ -26,7 +27,7 @@ export default [
             format: 'esm',
           },
     ],
-    plugins: [nodeResolve({browser: true}), ...plugins],
+    plugins: [nodeResolve({browser: true}), ...plugins,nodePolyfills()],
   },
 ]
 
