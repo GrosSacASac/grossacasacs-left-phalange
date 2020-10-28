@@ -1,4 +1,5 @@
 import cjs from '@rollup/plugin-commonjs'
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import {dependencies} from './package.json'
 
 const plugins = [cjs()]
@@ -17,4 +18,15 @@ export default [
     external,
     plugins,
   },
+  {
+    input: 'src/browser.js',
+    output: [
+        {
+            file: 'dist/browser.js',
+            format: 'esm',
+          },
+    ],
+    plugins: [nodeResolve({browser: true}), ...plugins],
+  },
 ]
+
