@@ -18,7 +18,7 @@ npm i @grossacasacs/left-phalange
 // Node
 import {parse, load, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
 // Web
-import {parse, stringify} from '@grossacasacs/left-phalange' // should resolve to /dist/browser.js
+import {parse, stringify} from '@grossacasacs/left-phalange' // should resolve to /dist/browser.es.js
 
 ```
 
