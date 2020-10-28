@@ -1,5 +1,10 @@
 # changelog
 
+## 3.0.0
+
+ * Remove filename option from parse
+
+
 ## 2.1.0
 
  * Expose supportedExtensions, an array of strings

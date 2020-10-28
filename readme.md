@@ -59,8 +59,6 @@ Parsing from a string
   - Data type of `string`
   - Default `yaml`
   - Should be one of `ini`, `json`, `json5`, `toml`, `yaml`
-- options.filename
-  - Filename displayed in the error message.
 
 examples:
 
@@ -70,8 +68,6 @@ parse('{"left": "phalange"}')
 parse('{"left": "phalange"}', 'json')
 
 parse('left = "phalange"', {type: 'toml'})
-
-parse('left = phalange', {filename: 'path/to/data.yml'})
 ```
 
 ### stringify(data[, options])

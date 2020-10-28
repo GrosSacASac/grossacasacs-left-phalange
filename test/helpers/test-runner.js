@@ -18,10 +18,6 @@ function testRunner(testObject) {
       t.deepEqual(parse(string, type), data)
     })
 
-    test('parse(string, {filename})', (t) => {
-      t.deepEqual(parse(string, {filename}), data)
-    })
-
     test('parse(prettyString, type)', (t) => {
       t.deepEqual(parse(prettyString, type), data)
     })
