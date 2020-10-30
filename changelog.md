@@ -3,7 +3,7 @@
 ## 3.0.0
 
  * Remove filename option from parse
- * Works in the browser
+ * Works in the browser, Deno
  * Rename dist/index.js dist/index.cjs
 
 ## 2.1.0
