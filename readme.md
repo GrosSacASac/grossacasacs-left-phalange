@@ -4,7 +4,7 @@ CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringi
 
 ## Platforms
 
-Node, Web
+Node, Web, Deno
 
 ## Install
 
@@ -19,7 +19,8 @@ npm i @grossacasacs/left-phalange
 import {parse, load, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
 // Web
 import {parse, stringify} from '@grossacasacs/left-phalange' // should resolve to /dist/browser.es.js
-
+// Deno
+import {parse, stringify} from 'https://unpkg.com/@grossacasacs/left-phalange/dist/browser.es.js'
 ```
 
 ### load(file[, options])

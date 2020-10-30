@@ -1,4 +1,5 @@
 import { parse, stringify } from "../../dist/browser.es.js";
+// import { parse, stringify } from "https://unpkg.com/@grossacasacs/left-phalange/dist/browser.es.js";
 
 const yamls = `---
 defaultLang: fr

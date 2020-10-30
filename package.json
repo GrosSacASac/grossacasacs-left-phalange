@@ -1,6 +1,6 @@
 {
     "name": "@grossacasacs/left-phalange",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier",
     "license": "MIT",
     "type": "module",
@@ -9,7 +9,7 @@
         "import": "./src/index.js",
         "require": "./dist/index.cjs",
         "browser": "./dist/browser.es.js",
-        "deno": null
+        "deno": "./dist/browser.es.js",
     },
     "scripts": {
         "build": "rollup --config",
@@ -17,6 +17,7 @@
         "lint": "eslint \"**/*.{js,mjs}\"",
         "test": "ava",
         "test-coverage": "nyc ava",
+        "try-deno": "deno run examples/deno/test.js",
         "prepublishOnly": "npm t && npm run clean && npm run build"
     },
     "dependencies": {
