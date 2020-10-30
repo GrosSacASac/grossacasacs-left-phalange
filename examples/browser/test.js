@@ -1,4 +1,3 @@
-// import { parse } from "../../src/index.js";
 import { parse, stringify } from "../../dist/browser.es.js";
 
 const yamls = `---

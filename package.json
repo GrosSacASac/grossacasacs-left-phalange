@@ -9,7 +9,7 @@
         "import": "./src/index.js",
         "require": "./dist/index.cjs",
         "browser": "./dist/browser.es.js",
-        "deno": null
+        "deno": "./dist/browser.es.js",
     },
     "scripts": {
         "build": "rollup --config",
