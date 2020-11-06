@@ -1,4 +1,4 @@
-import {parserToLoader} from '../utils/parser-to-loader.js'
+import {parserToLoader, parserToAsyncLoader} from '../utils/parser-to-loader.js'
 
 import {parseYaml} from '../parser/yaml.js'
 import {parseJson5} from '../parser/json5.js'
@@ -23,12 +23,25 @@ const ini = parserToLoader(parsers.ini)
 const json = parserToLoader(parsers.json)
 const js = esm
 
+const yamlAsync = parserToAsyncLoader(parsers.yaml)
+const json5Async = parserToAsyncLoader(parsers.json5)
+const tomlAsync = parserToAsyncLoader(parsers.toml)
+const iniAsync = parserToAsyncLoader(parsers.ini)
+const jsonAsync = parserToAsyncLoader(parsers.json)
+
 yaml.defaultExtension = 'yaml'
+yamlAsync.defaultExtension = 'yaml'
 json5.defaultExtension = 'json5'
+json5Async.defaultExtension = 'json5'
 toml.defaultExtension = 'toml'
+tomlAsync.defaultExtension = 'toml'
 ini.defaultExtension = 'ini'
+iniAsync.defaultExtension = 'ini'
 json.defaultExtension = 'json'
+jsonAsync.defaultExtension = 'json'
+
 js.defaultExtension = 'js'
+loadCjs.defaultExtension = 'cjs'
 
 const all = [
   esm,
@@ -39,6 +52,14 @@ const all = [
   loadCjs,
   json,
   ini,
+]
+
+const allAsync = [
+  yamlAsync,
+  json5Async,
+  tomlAsync,
+  jsonAsync,
+  iniAsync,
 ]
 
 const supportedExtensions =  all.map(loader => {
@@ -55,5 +76,13 @@ export {
     json,
     ini,
     all,
+
+    yamlAsync,
+    json5Async,
+    tomlAsync,
+    iniAsync,
+    jsonAsync,
+    allAsync,
+
     supportedExtensions
 }

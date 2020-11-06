@@ -1,5 +1,6 @@
-export {parserToLoader}
+export {parserToLoader, parserToAsyncLoader};
 import {readFileSync} from 'fs'
+import {readFile} from "fs/promises";
 
 function parserToLoader(parser) {
   return function loader(filename, options) {
@@ -12,3 +13,13 @@ function parserToLoader(parser) {
   }
 }
 
+function parserToAsyncLoader(parser) {
+  return function loader(filename, options) {
+    return readFile(filename, 'utf8').then(content => {
+      return parser(content, {
+        filename,
+        ...options,
+      })
+    });
+  }
+}

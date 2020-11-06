@@ -51,6 +51,11 @@ load('path/to/data', 'yaml')
 load('path/to/data', {type: 'toml'})
 ```
 
+
+### loadAsync(file[, options])
+
+__Node Only__ Promise version of load
+
 ### parse(string[, options])
 
 Parsing from a string

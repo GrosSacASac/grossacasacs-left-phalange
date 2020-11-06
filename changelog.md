@@ -1,5 +1,10 @@
 # changelog
 
+## 3.1.0
+
+ * Add loadAsync
+
+
 ## 3.0.0
 
  * Remove filename option from parse
