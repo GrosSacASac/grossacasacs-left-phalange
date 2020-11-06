@@ -39,5 +39,15 @@ export default [
     ],
     plugins: [nodeResolve({browser: true}), ...plugins,nodePolyfills()],
   },
+  {
+    input: 'ui/source/js/main.js',
+    output: [
+        {
+            file: 'ui/source/js/main.compiled.js',
+            format: 'esm',
+          },
+    ],
+    plugins: [],
+  },
 ]
 

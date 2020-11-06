@@ -92,3 +92,4 @@ dist/
 test-sac.mjs
 notes.txt
 lux.yaml
+ui/source/js/main.compiled.js

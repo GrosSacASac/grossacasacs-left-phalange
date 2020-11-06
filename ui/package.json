@@ -4,15 +4,7 @@
   "description": "starter template for static website development",
   "type": "module",
   "scripts": {
-    "lint-fix-meta": "eslint --ignore-path .gitignore --fix tests tools",
-    "lint-fix": "eslint --ignore-path .gitignore --fix source",
-    "lint": "eslint --ignore-path .gitignore source",
-    "inline-html": "node ./node_modules/html-sac/source/buildTime/inlineHTML.js source/index.html source/index-temp.html",
-    "bundle-js": "parcel build source/index-temp.html",
-    "clean": "node tools/clean.js",
-    "build-prod": "npm run inline-html && npm run bundle-js && npm run clean",
-    "serve-prod": "serve ./dist -p 8080",
-    "serve-dev": "node tools/auto-reload-server/auto-reload-server.js"
+    "serve-prod": "serve -p 8080"
   },
   "dependencies": {
     "@eroc/core": "^3.0.0",
@@ -20,33 +12,7 @@
     "dom99": "^21.1.3"
   },
   "devDependencies": {
-    "chokidar": "^3.3.1",
-    "eslint": "^6.8.0",
-    "eslint-config-red": "^1.7.0",
-    "filesac": "^11.1.1",
-    "html-sac": "^2.0.1",
-    "minimist": "^1.2.5",
-    "onewaydata": "^5.0.1",
-    "parcel-bundler": "^1.12.4",
-    "polka": "^0.5.2",
-    "serve": "^11.3.0",
-    "serve-static": "^1.14.1"
+    "serve": "^11.3.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "red"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module",
-      "ecmaFeatures": {}
-    },
-    "env": {
-      "es2020": true,
-      "browser": true,
-      "node": true
-    },
-    "rules": {}
-  },
-  "private":"true"
+  "private": true
 }
