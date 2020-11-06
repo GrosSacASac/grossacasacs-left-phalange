@@ -4,7 +4,7 @@ CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringi
 
 ## Demo 
 
-Source in [ui/]
+Source in [ui/](./ui)
 [https://grossacasacs-left-phalange.vercel.app/](https://grossacasacs-left-phalange.vercel.app/)
 
 ## Platforms
