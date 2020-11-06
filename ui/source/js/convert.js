@@ -3,6 +3,7 @@ import * as d from "./dependencies.js";
 import {parse, stringify} from "./dependencies.js";
 import {  } from "./settings.js";
 
+
 const convert = function (event) {
     if (event) {
         event.preventDefault();
@@ -11,8 +12,15 @@ const convert = function (event) {
     const inputType = d.get(`inputType`);
     const outputType = d.get(`outputType`);
 
-    const inputObject = parse(input, inputType);
-    const result  = stringify(inputObject, outputType);
+    let result;
+    let inputObject;
+    try {
+        inputObject = parse(input, inputType);
+        result  = stringify(inputObject, outputType);
+    } catch (error) {
+        result = `Error: probably invalid input,
+        ${error} `;
+    }
     d.feed(`output`, result);
 };
 
