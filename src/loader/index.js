@@ -1,3 +1,24 @@
+export {
+  esm,
+  js,
+  yaml,
+  json5,
+  toml,
+  loadCjs as cjs,
+  json,
+  ini,
+  all,
+
+  yamlAsync,
+  json5Async,
+  tomlAsync,
+  iniAsync,
+  jsonAsync,
+  allAsync,
+
+  supportedExtensions,
+}
+
 import {parserToLoader, parserToAsyncLoader} from '../utils/parser-to-loader.js'
 
 import {parseYaml} from '../parser/yaml.js'
@@ -65,24 +86,3 @@ const allAsync = [
 const supportedExtensions =  all.map(loader => {
   return loader.defaultExtension;
 }).filter(Boolean);
-
-export {
-    esm,
-    js,
-    yaml,
-    json5,
-    toml,
-    loadCjs as cjs,
-    json,
-    ini,
-    all,
-
-    yamlAsync,
-    json5Async,
-    tomlAsync,
-    iniAsync,
-    jsonAsync,
-    allAsync,
-
-    supportedExtensions
-}

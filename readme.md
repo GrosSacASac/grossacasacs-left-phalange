@@ -16,16 +16,16 @@ npm i @grossacasacs/left-phalange
 
 ```js
 // Node
-import {parse, load, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
+import {parse, load, loadAsync, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
 // Web
 import {parse, stringify} from '@grossacasacs/left-phalange' // should resolve to /dist/browser.es.js
 // Deno
-import {parse, stringify} from 'https://unpkg.com/@grossacasacs/left-phalange/dist/browser.es.js'
+import {parse, stringify, load, loadAsync} from 'https://unpkg.com/@grossacasacs/left-phalange/dist/deno.es.js'
 ```
 
 ### load(file[, options])
 
-__Node Only__ Loading from a file
+Loading from a file
 
 - file
   - Data file path to load
@@ -54,7 +54,7 @@ load('path/to/data', {type: 'toml'})
 
 ### loadAsync(file[, options])
 
-__Node Only__ Promise version of load
+Promise version of load
 
 ### parse(string[, options])
 

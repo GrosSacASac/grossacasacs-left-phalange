@@ -29,5 +29,15 @@ export default [
     ],
     plugins: [nodeResolve({browser: true}), ...plugins,nodePolyfills()],
   },
+  {
+    input: 'src/deno.js',
+    output: [
+        {
+            file: 'dist/deno.es.js',
+            format: 'esm',
+          },
+    ],
+    plugins: [nodeResolve({browser: true}), ...plugins,nodePolyfills()],
+  },
 ]
 

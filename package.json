@@ -1,6 +1,6 @@
 {
     "name": "@grossacasacs/left-phalange",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "description": "CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier",
     "license": "MIT",
     "type": "module",
@@ -9,7 +9,7 @@
         "import": "./src/index.js",
         "require": "./dist/index.cjs",
         "browser": "./dist/browser.es.js",
-        "deno": "./dist/browser.es.js"
+        "deno": "./dist/deno.es.js"
     },
     "scripts": {
         "build": "rollup --config",
