@@ -1,0 +1,12 @@
+/* styles only index.html
+import components used on this page here
+*/
+
+body {
+    background-color: #fad420;
+    background-image: linear-gradient(to left, #e40b1d , #a8c023);
+}
+
+output {
+    background-color: #eee;
+}

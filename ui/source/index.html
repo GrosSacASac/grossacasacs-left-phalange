@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Converter</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="./images/icon152.jpg">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <!-- html includes for development without compile step -->
+    <link rel="stylesheet" href="../node_modules/html-sac/source/runTime/inlineHTMLdebugHelper.css">
+    <script type="module" src="../node_modules/html-sac/source/runTime/inlineHTMLRuntime.js"></script>
+    
+    <script src="js/main.js" type="module"></script>
+</head>
+
+
+<body>
+    <h1>JSON, YAML, TOML converter</h1>
+    <h2>Uses <a href="https://github.com/GrosSacASac/grossacasacs-left-phalange/">@grossacasacs/left-phalange</a></h2>
+    <p>All conversions are done locally</p>
+    <form>
+        <p>Convert from
+            <select data-list="options" data-use="option" data-variable="inputType"></select>
+            to
+            <select data-list="options" data-use="option" data-variable="outputType"></select>
+        </p>
+        <button data-function="convert">Convert</button>
+        <label>
+            <span data-variable="inputType"></span>
+            <textarea data-variable="input"></textarea>
+        </label>
+        <label>
+            <span data-variable="outputType"></span>
+            <pre><output data-variable="output"></output></pre>
+        </label>
+    </form>
+</body>
+</html>

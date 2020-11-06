@@ -8,9 +8,7 @@ Node, Web, Deno
 
 ## Install
 
-```sh
-npm i @grossacasacs/left-phalange
-```
+[npm i @grossacasacs/left-phalange](https://www.npmjs.com/package/@grossacasacs/left-phalange)
 
 ## Usage
 
