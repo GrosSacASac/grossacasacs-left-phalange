@@ -1,6 +1,6 @@
 {
     "name": "@grossacasacs/left-phalange",
-    "version": "3.2.0",
+    "version": "3.2.1",
     "description": "CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier",
     "license": "MIT",
     "type": "module",
@@ -18,7 +18,8 @@
         "test": "ava",
         "test-coverage": "nyc ava",
         "try-deno": "deno run examples/deno/test.js",
-        "prepublishOnly": "npm t && npm run clean && npm run build"
+        "prepublishOnly": "npm t && npm run clean && npm run build",
+        "serve": "serve ./ui/source -p 8080"
     },
     "dependencies": {
         "@iarna/toml": "3.0.0",
@@ -38,6 +39,7 @@
         "nyc": "15.1.0",
         "rollup": "2.32.1",
         "rollup-plugin-node-polyfills": "^0.2.1",
+        "serve": "^11.3.2",
         "temp-write": "4.0.0"
     },
     "ava": {
