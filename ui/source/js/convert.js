@@ -18,8 +18,8 @@ const convert = function (event) {
         inputObject = parse(input, inputType);
         result  = stringify(inputObject, outputType);
     } catch (error) {
-        result = `Error: probably invalid input,
-        ${error} `;
+        result = `Error: probably invalid ${inputType} input,
+        ${error.toString()} `;
     }
     d.feed(`output`, result);
 };

@@ -1,5 +1,6 @@
 import cjs from '@rollup/plugin-commonjs'
 import nodePolyfills from 'rollup-plugin-node-polyfills';
+import { terser } from "rollup-plugin-terser";
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import {dependencies} from './package.json'
 
@@ -27,7 +28,7 @@ export default [
             format: 'esm',
           },
     ],
-    plugins: [nodeResolve({browser: true}), ...plugins,nodePolyfills()],
+    plugins: [nodeResolve({browser: true}), ...plugins, nodePolyfills()],
   },
   {
     input: 'src/deno.js',
@@ -37,17 +38,17 @@ export default [
             format: 'esm',
           },
     ],
-    plugins: [nodeResolve({browser: true}), ...plugins,nodePolyfills()],
+    plugins: [nodeResolve({browser: true}), ...plugins, nodePolyfills()],
   },
   {
     input: 'ui/source/js/main.js',
     output: [
         {
-            file: 'ui/source/js/main.compiled.js',
+            file: 'ui/source/js/main.min.js',
             format: 'esm',
           },
     ],
-    plugins: [],
+    plugins: [terser()],
   },
 ]
 
