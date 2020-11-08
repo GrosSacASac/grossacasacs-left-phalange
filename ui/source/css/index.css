@@ -7,6 +7,12 @@ body {
     background-image: linear-gradient(to left, #e40b1d , #a8c023);
 }
 
+textarea {
+    display: block;
+    min-width: 70vw;
+    min-height: 30vh;
+}
+
 pre {
     background-color: #eee;
 }
