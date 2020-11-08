@@ -16,7 +16,10 @@ const convert = function (event) {
     let inputObject;
     try {
         inputObject = parse(input, inputType);
-        result  = stringify(inputObject, outputType);
+        result  = stringify(inputObject, {
+            type: outputType,
+            pretty: true,
+        });
     } catch (error) {
         result = `Error: probably invalid ${inputType} input,
         ${error.toString()} `;
