@@ -16,7 +16,7 @@ useDefaultLogging(core);
     // here you cannot use d.elements
     d.start({
         initialFeed: {
-            options: ["yaml", "json", "toml"].map(option => {
+            options: ["yaml", "json", "toml", "ini"].map(option => {
                 return {
                     textContent: option,
                     value: option
