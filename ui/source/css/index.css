@@ -7,6 +7,6 @@ body {
     background-image: linear-gradient(to left, #e40b1d , #a8c023);
 }
 
-output {
+pre {
     background-color: #eee;
 }
