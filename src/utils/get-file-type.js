@@ -6,9 +6,9 @@ const fileTypes = {
   '.yml': `yaml`,
 };
 
-function getFileType(file) {
+const getFileType = function(file) {
   const extension = extname(file);
 
   return fileTypes[extension] || extension.slice(1);
-}
+};
 

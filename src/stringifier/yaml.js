@@ -9,10 +9,16 @@ const stringifyYaml = function (data, options) {
     ...options,
   };
 
+  let lineWidth;
+  if (pretty) {
+    lineWidth = 80;
+  } else {
+    lineWidth = -1;
+  } 
   return safeDump(data, {
     noArrayIndent: !pretty,
     sortKeys: sort,
-    lineWidth: pretty ? 80 : -1,
+    lineWidth,
   });
 };
 

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {parse, load, stringify} from '../src/index.js';
+import {parse} from '../src/index.js';
 import {loadFileFromString} from './helpers/load-from-string.js';
 import {loadFileFromStringExtensionLess} from './helpers/load-from-stringExtensionLess.js';
 

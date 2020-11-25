@@ -1,13 +1,18 @@
 import { testRunner } from './helpers/test-runner.js';
 
-const INI_LINE_FEED = process.platform === `win32` ? `\r\n` : `\n`;
+let iniLineFeed;
+if (process.platform === `win32`) {
+  iniLineFeed = `\r\n`;
+} else {
+  iniLineFeed = `\n`;
+} 
 const data = {left: `phalange`};
 
 const testObject = {
   type: `ini`,
   data,
-  string: `left=phalange${INI_LINE_FEED}`,
-  prettyString: `left = phalange${INI_LINE_FEED}`,
+  string: `left=phalange${iniLineFeed}`,
+  prettyString: `left = phalange${iniLineFeed}`,
 };
 
 testRunner(testObject);

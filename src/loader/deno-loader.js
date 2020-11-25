@@ -9,7 +9,7 @@ import {parseToml} from '../parser/toml.js';
 import {parseIni} from '../parser/ini.js';
 import {getFileType} from "../utils/get-file-type-deno.js";
   
-function parserToLoader(parser) {
+const parserToLoader = function (parser) {
     return function loader(filename, options) {
       const content = Deno.readTextFileSync(filename);
   
@@ -18,9 +18,9 @@ function parserToLoader(parser) {
         ...options,
       });
     };
-  }
+  };
 
-function parserToAsyncLoader(parser) {
+const parserToAsyncLoader = function (parser) {
 return function loader(filename, options) {
     return Deno.readTextFile(filename).then(content => {
       return parser(content, {
@@ -29,7 +29,7 @@ return function loader(filename, options) {
       });
     });
 };
-}
+};
 
 
 const parsers = {

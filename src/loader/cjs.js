@@ -1,7 +1,7 @@
 export {loadCjs};
 import importFresh from 'import-fresh';
 
-function loadCjs(file /* , options */) {
+const loadCjs = function (file /* , options */) {
   return importFresh(file);
-}
+};
 

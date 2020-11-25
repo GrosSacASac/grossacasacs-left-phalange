@@ -4,10 +4,10 @@ import parse from 'parse-json';
 
 function parseJson(content, options) {
   const {filename} = {
-    filename: ``,
+    filename: undefined,
     ...options,
   };
-  return filename ? parse(content, filename) : parse(content);
+  return parse(content, filename);
 }
 
 export default parseJson;

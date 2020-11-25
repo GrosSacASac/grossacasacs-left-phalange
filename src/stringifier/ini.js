@@ -1,7 +1,7 @@
 export {stringifyIni};
 import {encode} from 'ini';
 
-function stringifyIni(data, options) {
+const stringifyIni = function(data, options) {
   const {pretty} = {
     pretty: false,
     ...options,
@@ -9,5 +9,5 @@ function stringifyIni(data, options) {
   return encode(data, {
     whitespace: pretty,
   });
-}
+};
 

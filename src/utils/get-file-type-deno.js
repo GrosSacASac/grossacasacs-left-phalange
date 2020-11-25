@@ -5,7 +5,7 @@ const fileTypes = {
   '.yml': `yaml`,
 };
 
-function getFileType(file) {
+const getFileType = function(file) {
   let extension;
   if (file.includes(`.`)) {
     const fileSplit = file.split(`.`);
@@ -14,5 +14,5 @@ function getFileType(file) {
     extension = ``;
   }
   return fileTypes[extension] || extension;
-}
+};
 
