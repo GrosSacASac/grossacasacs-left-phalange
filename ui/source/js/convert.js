@@ -1,7 +1,6 @@
 export { start };
 import * as d from "./dependencies.js";
 import {parse, stringify} from "./dependencies.js";
-import {  } from "./settings.js";
 
 
 const convert = function (event) {
@@ -11,6 +10,7 @@ const convert = function (event) {
     const input = d.get(`input`);
     const inputType = d.get(`inputType`);
     const outputType = d.get(`outputType`);
+    const compact = d.get(`compact`);
 
     let result;
     let inputObject;
@@ -18,7 +18,7 @@ const convert = function (event) {
         inputObject = parse(input, inputType);
         result  = stringify(inputObject, {
             type: outputType,
-            pretty: true,
+            pretty: !compact,
         });
     } catch (error) {
         result = `Error: probably invalid ${inputType} input,

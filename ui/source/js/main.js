@@ -12,8 +12,6 @@ useDefaultLogging(core);
 (async () => {
     await core.start(convert);
 
-    // here executes before dom99 went through
-    // here you cannot use d.elements
     d.start({
         initialFeed: {
             options: ["yaml", "json", "toml", "ini"].map(option => {
@@ -24,10 +22,8 @@ useDefaultLogging(core);
             }),
             inputType: "json",
             outputType: "yaml",
-            input: `{"example": "json"}`
+            input: `{"example": "json"}`,
+            compact: false,
         },
     });
-
-    // executes after dom99 went through
-    // here you can use d.elements
 })();
