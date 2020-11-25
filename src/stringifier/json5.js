@@ -7,6 +7,9 @@ const stringifyJson5 = function (data, options) {
     pretty: false,
     ...options,
   };
-  return pretty ? stringify(data, undefined, 2) : stringify(data);
+  if (pretty) {
+    return stringify(data, undefined, 2);
+  }
+  return stringify(data);
 };
 

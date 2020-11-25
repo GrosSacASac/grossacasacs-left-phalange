@@ -114,7 +114,7 @@ const prepareArgument = function(file, options = {}) {
 };
 
 
-function load(file, options) {
+const load = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
@@ -136,7 +136,7 @@ function load(file, options) {
     }
   });
   return result;
-}
+};
 
 
 function loadAsync(file, options) {

@@ -23,7 +23,7 @@ const prepareArgument = function(file, options = {}) {
 };
 
 
-function load(file, options) {
+const load = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
@@ -41,10 +41,10 @@ function load(file, options) {
     }
   });
   return result;
-}
+};
 
 
-function loadAsync(file, options) {
+const loadAsync = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
@@ -56,4 +56,4 @@ function loadAsync(file, options) {
   return Promise.any(loader.allAsync.map((specificAsyncLoader) => {
       return specificAsyncLoader(`${file}.${specificAsyncLoader.defaultExtension}`);
   }));
-}
+};

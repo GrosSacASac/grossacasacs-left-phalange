@@ -1,8 +1,7 @@
-
 export {parseIni};
 import {decode} from 'ini';
 
-function parseIni(content /* , options */) {
-  return decode(String(content));
-}
 
+const parseIni = function (content /* , options */) {
+  return decode(String(content));
+};

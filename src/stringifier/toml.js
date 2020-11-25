@@ -1,7 +1,7 @@
 export {stringifyToml};
 import {stringify} from '@iarna/toml';
 
-function stringifyToml(data /* , options */) {
+const stringifyToml = function (data /* , options */) {
   return stringify(data);
-}
+};
 
