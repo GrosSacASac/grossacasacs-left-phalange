@@ -12,9 +12,12 @@
         "deno": "./dist/deno.es.js"
     },
     "scripts": {
-        "build": "rollup --config",
+        "build-package": "rollup --config",
+        "build-ui": "rollup --config ui/rollup.config.js",
+        "build": "npm run build-package && npm run build-ui",
         "clean": "del-cli dist",
-        "lint": "eslint \"**/*.{js,mjs}\"",
+        "lint-fix": "eslint --ignore-path .gitignore --fix .",
+        "lint": "eslint --ignore-path .gitignore .",
         "test": "ava",
         "test-coverage": "nyc ava",
         "try-deno": "deno run examples/deno/test.js",
@@ -35,13 +38,29 @@
         "@rollup/plugin-node-resolve": "^10.0.0",
         "ava": "3.13.0",
         "del-cli": "3.0.1",
-        "eslint": "7.12.0",
+        "eslint": "^7.12.1",
+        "eslint-config-red": "^1.7.2",
         "nyc": "15.1.0",
         "rollup": "2.32.1",
         "rollup-plugin-node-polyfills": "^0.2.1",
         "rollup-plugin-terser": "^7.0.2",
         "serve": "^11.3.2",
         "temp-write": "4.0.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "red"
+        ],
+        "parserOptions": {
+            "ecmaVersion": 2021,
+            "sourceType": "module",
+            "ecmaFeatures": {}
+        },
+        "env": {
+            "es2021": true,
+            "browser": true,
+            "node": true
+        }
     },
     "ava": {
         "files": [
