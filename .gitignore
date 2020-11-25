@@ -92,3 +92,4 @@ dist/
 test-sac.mjs
 lux.yaml
 
+ui/source/js/main.min.js
