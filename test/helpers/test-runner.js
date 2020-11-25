@@ -1,8 +1,10 @@
+export {testRunner};
 import test from 'ava';
 import {parse, stringify} from '../../src/index.js';
-import loadFromString from './load-from-string.js';
+import {loadFileFromString} from './load-from-string.js';
 
-function testRunner(testObject) {
+
+const testRunner = function(testObject) {
   const {
     string,
     data,
@@ -32,24 +34,24 @@ function testRunner(testObject) {
   }
 
   test(`load(filename)`, (t) => {
-    t.deepEqual(loadFromString(string, filename), data);
+    t.deepEqual(loadFileFromString(string, filename), data);
   });
 
 
   test(`load(filename, type)`, (t) => {
     if (type === `esm`) {
       t.throws(function () {
-        return loadFromString(string, `data.xml`, type);
+        return loadFileFromString(string, `data.xml`, type);
       });
     } else {
-      t.deepEqual(loadFromString(string, `data.xml`, type), data);
+      t.deepEqual(loadFileFromString(string, `data.xml`, type), data);
     }
   });
 
   if (malformed) {
     test(`load(malformed)`, (t) => {
       t.throws(() => {
-        loadFromString(malformed, filename, type);
+        loadFileFromString(malformed, filename, type);
       });
     });
   }
@@ -69,6 +71,5 @@ function testRunner(testObject) {
   test(`stringify(data, {type, pretty: true})`, (t) => {
     t.is(stringify(data, {type, pretty: true}), prettyString);
   });
-}
+};
 
-export default testRunner;

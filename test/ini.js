@@ -1,4 +1,4 @@
-import testRunner from './helpers/test-runner.js';
+import { testRunner } from './helpers/test-runner.js';
 
 const INI_LINE_FEED = process.platform === `win32` ? `\r\n` : `\n`;
 const data = {left: `phalange`};

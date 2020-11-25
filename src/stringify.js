@@ -19,7 +19,7 @@ const stringifier = {
   esm: stringifyEsm,
 };
 
-function stringify(data, options) {
+const stringify = function (data, options) {
   if (typeof options === `string`) {
     options = {
       type: options,
@@ -38,5 +38,5 @@ function stringify(data, options) {
   };
 
   return stringifier[type](data, options);
-}
+};
 

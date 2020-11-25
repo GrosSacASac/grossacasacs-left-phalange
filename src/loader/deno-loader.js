@@ -23,10 +23,10 @@ function parserToLoader(parser) {
 function parserToAsyncLoader(parser) {
 return function loader(filename, options) {
     return Deno.readTextFile(filename).then(content => {
-    return parser(content, {
-        filename,
-        ...options,
-    });
+      return parser(content, {
+          filename,
+          ...options,
+      });
     });
 };
 }

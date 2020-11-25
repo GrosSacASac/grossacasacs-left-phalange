@@ -1,7 +1,7 @@
 export {parseToml};
 import {parse} from '@iarna/toml';
 
-function parseToml(content /* , options */) {
+const parseToml = function (content /* , options */) {
   return parse(content);
-}
+};
 

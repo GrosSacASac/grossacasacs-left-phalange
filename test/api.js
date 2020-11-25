@@ -1,8 +1,8 @@
 import test from 'ava';
 
 import {parse, load, stringify} from '../src/index.js';
-import loadFromString from './helpers/load-from-string.js';
-import loadFileFromStringExtensionLess from './helpers/load-from-stringExtensionLess.js';
+import {loadFileFromString} from './helpers/load-from-string.js';
+import {loadFileFromStringExtensionLess} from './helpers/load-from-stringExtensionLess.js';
 
 test(`parse(data)`, (t) => {
   t.deepEqual(
@@ -13,11 +13,11 @@ test(`parse(data)`, (t) => {
 
 test(`load('data.xml')`, (t) => {
   t.throws(() => {
-    loadFromString(`left: [phalange`, `data.xml`);
+    loadFileFromString(`left: [phalange`, `data.xml`);
   });
 
   t.deepEqual(
-    loadFromString(`left = phalange`, `data.yml`),
+    loadFileFromString(`left = phalange`, `data.yml`),
     parse(`left = phalange`),
   );
 });

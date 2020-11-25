@@ -14,7 +14,7 @@ const parser = {
   ini: parseIni,
 };
 
-function parse(string, options = {}) {
+const parse = function (string, options = {}) {
   if (typeof options === `string`) {
     options = {
       type: options,
@@ -22,4 +22,4 @@ function parse(string, options = {}) {
   }
 
   return parser[options.type || `yaml`](string, options);
-}
+};
