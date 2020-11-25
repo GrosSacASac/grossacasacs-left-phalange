@@ -14,14 +14,14 @@ useDefaultLogging(core);
 
     d.start({
         initialFeed: {
-            options: ["yaml", "json", "toml", "ini"].map(option => {
+            options: [`yaml`, `json`, `toml`, `ini`].map(option => {
                 return {
                     textContent: option,
-                    value: option
-                }
+                    value: option,
+                };
             }),
-            inputType: "json",
-            outputType: "yaml",
+            inputType: `json`,
+            outputType: `yaml`,
             input: `{"example": "json"}`,
             compact: false,
         },

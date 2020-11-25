@@ -10,7 +10,7 @@ subTitle: Software, Culture, Politics
 categories:
 - tag: travel
   name: Travel
-`
+`;
 const tomls = `
 # This is a TOML document
 
@@ -31,7 +31,7 @@ role = "frontend"
 [servers.beta]
 ip = "10.0.0.2"
 role = "backend"
-`
+`;
 console.log(parse(yamls, `yaml`));
 console.log(parse(tomls, `toml`));
 console.log(stringify(parse(yamls, `yaml`), `toml`));

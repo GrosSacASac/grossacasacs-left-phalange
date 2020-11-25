@@ -1,13 +1,13 @@
 
-export {stringify}
+export {stringify};
 
-import {stringifyYaml} from './stringifier/yaml.js'
-import {stringifyJson5} from './stringifier/json5.js'
-import {stringifyJson} from './stringifier/json.js'
-import {stringifyToml} from './stringifier/toml.js'
-import {stringifyIni} from './stringifier/ini.js'
-import {stringifyCjs} from './stringifier/cjs.js'
-import {stringifyEsm} from './stringifier/esm.js'
+import {stringifyYaml} from './stringifier/yaml.js';
+import {stringifyJson5} from './stringifier/json5.js';
+import {stringifyJson} from './stringifier/json.js';
+import {stringifyToml} from './stringifier/toml.js';
+import {stringifyIni} from './stringifier/ini.js';
+import {stringifyCjs} from './stringifier/cjs.js';
+import {stringifyEsm} from './stringifier/esm.js';
 
 const stringifier = {
   yaml: stringifyYaml,
@@ -17,26 +17,26 @@ const stringifier = {
   ini: stringifyIni,
   cjs: stringifyCjs,
   esm: stringifyEsm,
-}
+};
 
 function stringify(data, options) {
-  if (typeof options === 'string') {
+  if (typeof options === `string`) {
     options = {
       type: options,
-    }
+    };
   }
 
-  if (typeof options === 'boolean') {
+  if (typeof options === `boolean`) {
     options = {
       pretty: options,
-    }
+    };
   }
 
   const {type} = {
-    type: 'json',
+    type: `json`,
     ...options,
-  }
+  };
 
-  return stringifier[type](data, options)
+  return stringifier[type](data, options);
 }
 

@@ -1,8 +1,8 @@
 
-export {parseIni}
-import {decode} from 'ini'
+export {parseIni};
+import {decode} from 'ini';
 
 function parseIni(content /* , options */) {
-  return decode(String(content))
+  return decode(String(content));
 }
 

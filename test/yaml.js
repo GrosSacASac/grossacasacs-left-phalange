@@ -1,14 +1,14 @@
-import testRunner from './helpers/test-runner.js'
+import testRunner from './helpers/test-runner.js';
 
-const data = {left: 'phalange'}
+const data = {left: `phalange`};
 
 const testObject = {
-  type: 'yaml',
-  filename: 'data.yml',
+  type: `yaml`,
+  filename: `data.yml`,
   data,
-  string: 'left: phalange\n',
-  prettyString: 'left: phalange\n',
-  malformed: 'left: [phalange',
-}
+  string: `left: phalange\n`,
+  prettyString: `left: phalange\n`,
+  malformed: `left: [phalange`,
+};
 
-testRunner(testObject)
+testRunner(testObject);

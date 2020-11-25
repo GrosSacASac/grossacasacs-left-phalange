@@ -1,54 +1,43 @@
-import cjs from '@rollup/plugin-commonjs'
+import cjs from '@rollup/plugin-commonjs';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
-import { terser } from "rollup-plugin-terser";
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import {dependencies} from './package.json'
+import {dependencies} from './package.json';
 
-const plugins = [cjs()]
+const plugins = [cjs()];
 
-const external = ['path', 'fs', ...Object.keys(dependencies)]
+const external = [`path`, `fs`, ...Object.keys(dependencies)];
 
 export default [
   {
-    input: 'src/index.js',
+    input: `src/index.js`,
     output: [
       {
-        file: 'dist/index.cjs',
-        format: 'cjs',
+        file: `dist/index.cjs`,
+        format: `cjs`,
       },
     ],
     external,
     plugins,
   },
   {
-    input: 'src/browser.js',
+    input: `src/browser.js`,
     output: [
         {
-            file: 'dist/browser.es.js',
-            format: 'esm',
+            file: `dist/browser.es.js`,
+            format: `esm`,
           },
     ],
     plugins: [nodeResolve({browser: true}), ...plugins, nodePolyfills()],
   },
   {
-    input: 'src/deno.js',
+    input: `src/deno.js`,
     output: [
         {
-            file: 'dist/deno.es.js',
-            format: 'esm',
+            file: `dist/deno.es.js`,
+            format: `esm`,
           },
     ],
     plugins: [nodeResolve({browser: true}), ...plugins, nodePolyfills()],
   },
-  {
-    input: 'ui/source/js/main.js',
-    output: [
-        {
-            file: 'ui/source/js/main.min.js',
-            format: 'esm',
-          },
-    ],
-    plugins: [terser()],
-  },
-]
+];
 

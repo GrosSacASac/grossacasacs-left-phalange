@@ -1,19 +1,19 @@
-import testRunner from './helpers/test-runner.js'
+import testRunner from './helpers/test-runner.js';
 
-const data = {left: 'phalange'}
+const data = {left: `phalange`};
 
 const testObject = {
-  type: 'cjs',
-  filename: 'data.js',
+  type: `cjs`,
+  filename: `data.js`,
   data,
-  string: "module.exports = {left:'phalange'};",
+  string: `module.exports = {left:'phalange'};`,
   prettyString: `module.exports = {
   left: 'phalange',
 };`,
-  malformed: 'left: [phalange',
+  malformed: `left: [phalange`,
   skip: {
     parse: true,
   },
-}
+};
 
-testRunner(testObject)
+testRunner(testObject);

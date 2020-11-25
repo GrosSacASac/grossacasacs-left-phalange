@@ -1,13 +1,13 @@
-import testRunner from './helpers/test-runner.js'
+import testRunner from './helpers/test-runner.js';
 
-const data = {left: 'phalange'}
+const data = {left: `phalange`};
 
 const testObject = {
-  type: 'json',
+  type: `json`,
   data,
   string: JSON.stringify(data),
   prettyString: JSON.stringify(data, null, 2),
-  malformed: 'left: [phalange',
-}
+  malformed: `left: [phalange`,
+};
 
-testRunner(testObject)
+testRunner(testObject);

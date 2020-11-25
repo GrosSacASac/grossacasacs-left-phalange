@@ -1,1 +1,1 @@
-module.exports = {fisker: 'jerk'}
+module.exports = {fisker: `jerk`};

@@ -1,7 +1,7 @@
-export {loadCjs}
-import importFresh from 'import-fresh'
+export {loadCjs};
+import importFresh from 'import-fresh';
 
 function loadCjs(file /* , options */) {
-  return importFresh(file)
+  return importFresh(file);
 }
 

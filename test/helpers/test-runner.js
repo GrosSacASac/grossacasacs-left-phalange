@@ -1,6 +1,6 @@
-import test from 'ava'
-import {parse, stringify} from '../../src/index.js'
-import loadFromString from './load-from-string.js'
+import test from 'ava';
+import {parse, stringify} from '../../src/index.js';
+import loadFromString from './load-from-string.js';
 
 function testRunner(testObject) {
   const {
@@ -11,64 +11,64 @@ function testRunner(testObject) {
     prettyString,
     malformed,
     skip = {},
-  } = testObject
+  } = testObject;
 
   if (!skip.parse) {
-    test('parse(string, type)', (t) => {
-      t.deepEqual(parse(string, type), data)
-    })
+    test(`parse(string, type)`, (t) => {
+      t.deepEqual(parse(string, type), data);
+    });
 
-    test('parse(prettyString, type)', (t) => {
-      t.deepEqual(parse(prettyString, type), data)
-    })
+    test(`parse(prettyString, type)`, (t) => {
+      t.deepEqual(parse(prettyString, type), data);
+    });
 
     if (malformed) {
-      test('parse(malformed, type)', (t) => {
+      test(`parse(malformed, type)`, (t) => {
         t.throws(() => {
-          parse(malformed, type)
-        })
-      })
+          parse(malformed, type);
+        });
+      });
     }
   }
 
-  test('load(filename)', (t) => {
-    t.deepEqual(loadFromString(string, filename), data)
-  })
+  test(`load(filename)`, (t) => {
+    t.deepEqual(loadFromString(string, filename), data);
+  });
 
 
-  test('load(filename, type)', (t) => {
-    if (type === "esm") {
+  test(`load(filename, type)`, (t) => {
+    if (type === `esm`) {
       t.throws(function () {
-        return loadFromString(string, 'data.xml', type)
-      })
+        return loadFromString(string, `data.xml`, type);
+      });
     } else {
-      t.deepEqual(loadFromString(string, 'data.xml', type), data)
+      t.deepEqual(loadFromString(string, `data.xml`, type), data);
     }
-  })
+  });
 
   if (malformed) {
-    test('load(malformed)', (t) => {
+    test(`load(malformed)`, (t) => {
       t.throws(() => {
-        loadFromString(malformed, filename, type)
-      })
-    })
+        loadFromString(malformed, filename, type);
+      });
+    });
   }
 
-  test('stringify(data)', (t) => {
-    t.is(stringify(data), JSON.stringify(data))
-  })
+  test(`stringify(data)`, (t) => {
+    t.is(stringify(data), JSON.stringify(data));
+  });
 
-  test('stringify(data, type)', (t) => {
-    t.is(stringify(data, type), string)
-  })
+  test(`stringify(data, type)`, (t) => {
+    t.is(stringify(data, type), string);
+  });
 
-  test('stringify(data, true)', (t) => {
-    t.is(stringify(data, true), JSON.stringify(data, null, 2))
-  })
+  test(`stringify(data, true)`, (t) => {
+    t.is(stringify(data, true), JSON.stringify(data, null, 2));
+  });
 
-  test('stringify(data, {type, pretty: true})', (t) => {
-    t.is(stringify(data, {type, pretty: true}), prettyString)
-  })
+  test(`stringify(data, {type, pretty: true})`, (t) => {
+    t.is(stringify(data, {type, pretty: true}), prettyString);
+  });
 }
 
-export default testRunner
+export default testRunner;

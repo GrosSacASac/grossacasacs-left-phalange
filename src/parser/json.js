@@ -1,13 +1,13 @@
 
-export {parseJson}
-import parse from 'parse-json'
+export {parseJson};
+import parse from 'parse-json';
 
 function parseJson(content, options) {
   const {filename} = {
-    filename: '',
+    filename: ``,
     ...options,
-  }
-  return filename ? parse(content, filename) : parse(content)
+  };
+  return filename ? parse(content, filename) : parse(content);
 }
 
-export default parseJson
+export default parseJson;

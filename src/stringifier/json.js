@@ -1,9 +1,9 @@
-export {stringifyJson}
+export {stringifyJson};
 function stringifyJson(data, options) {
   const {pretty} = {
     pretty: false,
     ...options,
-  }
-  return pretty ? JSON.stringify(data, undefined, 2) : JSON.stringify(data)
+  };
+  return pretty ? JSON.stringify(data, undefined, 2) : JSON.stringify(data);
 }
 

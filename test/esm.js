@@ -1,19 +1,19 @@
-import testRunner from './helpers/test-runner.js'
+import testRunner from './helpers/test-runner.js';
 
-const data = {left: 'phalange'}
+const data = {left: `phalange`};
 
 const testObject = {
-  type: 'esm',
-  filename: 'data.mjs',
+  type: `esm`,
+  filename: `data.mjs`,
   data,
-  string: "export default {left:'phalange'};",
+  string: `export default {left:'phalange'};`,
   prettyString: `export default {
   left: 'phalange',
 };`,
-  malformed: 'left: [phalange',
+  malformed: `left: [phalange`,
   skip: {
     parse: true,
   },
-}
+};
 
-testRunner(testObject)
+testRunner(testObject);

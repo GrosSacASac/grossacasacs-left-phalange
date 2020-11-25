@@ -6,7 +6,7 @@
   "scripts": {},
   "dependencies": {
     "@eroc/core": "^3.0.0",
-    "@grossacasacs/left-phalange": "^3.2.0",
+    "@grossacasacs/left-phalange": "*",
     "dom99": "^21.1.4"
   },
   "devDependencies": {},
