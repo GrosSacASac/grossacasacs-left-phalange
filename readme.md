@@ -135,6 +135,11 @@ stringify({left: 'phalange'}, {type: 'json5', pretty: true})
 [Changelog](./changelog.md)
 
 
+## vercel deployment config
+
+ - build `cd ui && npm i && cd .. && npm run build`
+ - output `ui/source`
+
 ## Related
 
 - [left-phalange](https://github.com/fisker/left-phalange)
