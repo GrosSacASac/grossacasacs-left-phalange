@@ -22,15 +22,17 @@
     <p>All conversions are done locally</p>
     <form>
         <p>Convert from
-            <select data-list="options" data-use="option" data-variable="inputType"></select>
+            <select data-list="options" data-use="option" data-variable="inputType"
+            data-function="convert"></select>
             to
-            <select data-list="options" data-use="option" data-variable="outputType"></select>
+            <select data-list="options" data-use="option" data-variable="outputType"
+            data-function="convert"></select>
         </p>
         <p>
             <button data-function="convert">Convert</button>
             <label>
                 Compact
-                <input data-variable="compact" type="checkbox">
+                <input data-variable="compact" data-function="convert" type="checkbox">
             </label>
         </p>
         <label>
