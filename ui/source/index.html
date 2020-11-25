@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width">
     <link rel="icon" href="./images/icon152.jpg">
     <link rel="stylesheet" href="css/index.css">
-
-    <!-- <script src="js/main.js" type="module"></script> -->
-    <script src="js/main.min.js" type="module"></script>
+    
+    <script type="module">
+        if (location.hostname === `localhost`) {
+            import("js/main.js");
+        } else {
+            import("js/main.min.js");
+        }
+    </script>
 </head>
 
 <body>
