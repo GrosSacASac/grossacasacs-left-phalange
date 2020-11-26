@@ -139,7 +139,7 @@ const load = function (file, options) {
 };
 
 
-function loadAsync(file, options) {
+const loadAsync = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
@@ -147,8 +147,9 @@ function loadAsync(file, options) {
   }
 
   // if file is config, try to open config.json or config.yaml or config.toml
-  const result = new Error(`Unable to open ${file}`); // in case it cannot be found
   return Promise.any(allAsync.map((specificAsyncLoader) => {
       return specificAsyncLoader(`${file}.${specificAsyncLoader.defaultExtension}`);
-  }));
-}
+  })).catch(aggregateError => {
+    throw new Error(`Unable to open ${file}`);
+  });
+};

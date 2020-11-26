@@ -52,8 +52,9 @@ const loadAsync = function (file, options) {
   }
 
   // if file is config, try to open config.json or config.yaml or config.toml
-  const result = new Error(`Unable to open ${file}`); // in case it cannot be found
   return Promise.any(loader.allAsync.map((specificAsyncLoader) => {
       return specificAsyncLoader(`${file}.${specificAsyncLoader.defaultExtension}`);
-  }));
+  })).catch(aggregateError => {
+    throw new Error(`Unable to open ${file}`);
+  });
 };
