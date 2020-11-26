@@ -1,4 +1,4 @@
-import { load, loadAsync } from "../../dist/deno.es.js";
+import { loadAsync } from "../../dist/deno.es.js";
 
-console.log(await loadAsync(`package`));
+loadAsync(`package`).then(console.log);
 

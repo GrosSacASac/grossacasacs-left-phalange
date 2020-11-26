@@ -1,3 +1,4 @@
+/* eslint-disable */
 import cjs from '@rollup/plugin-commonjs';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { nodeResolve } from '@rollup/plugin-node-resolve';

@@ -4,7 +4,7 @@ const yamls = `---
 defaultLang: fr
 defaultAuthor: Me
 defaultLicense: CC-BY-NC-4.0
-mainTitle: "\U0001F392"
+mainTitle: "🎒"
 tabTitle: Le sac
 subTitle: Software, Culture, Politics
 categories:

@@ -11,7 +11,7 @@ const stringifyYaml = function (data, options) {
 
   let lineWidth;
   if (pretty) {
-    lineWidth = 80;
+    lineWidth = 80; /* eslint-disable-line */
   } else {
     lineWidth = -1;
   } 
