@@ -1,4 +1,4 @@
-# @grossacasacs/left-phalange
+# [@grossacasacs/left-phalange](https://github.com/GrosSacASac/grossacasacs-left-phalange)
 
 CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier
 
