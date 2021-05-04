@@ -1,6 +1,6 @@
 {
     "name": "@grossacasacs/left-phalange",
-    "version": "3.2.6",
+    "version": "3.2.7",
     "description": "CommonJS, ESModule, INI, JSON, JSON5, TOML, YAML data loader, parser and stringifier",
     "license": "MIT",
     "type": "module",
@@ -83,7 +83,7 @@
     "files": [
         "dist",
         "src",
-        "license",
+        "license.txt",
         "readme.md",
         "changelog.md"
     ],
