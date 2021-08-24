@@ -105,7 +105,7 @@ Creating a string from an object
 - options.type
   - Data type of `string`
   - Default `json`
-  - Should be one of `cjs`, `esm`, `ini`, `json`, `json5`
+  - Should be one of `cjs`, `esm`, `ini`, `json`, `json5`, `yaml`, `toml`
 - options.pretty
   - Pretty output
   - Default `false`
