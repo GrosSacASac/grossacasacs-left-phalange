@@ -6,7 +6,7 @@ import {dependencies} from './package.json';
 
 const plugins = [cjs()];
 
-const external = [`path`, `fs`, ...Object.keys(dependencies)];
+const external = [`path`, `fs`, `fs/promises`, ...Object.keys(dependencies)];
 
 export default [
   {
@@ -28,7 +28,7 @@ export default [
             format: `esm`,
           },
     ],
-    plugins: [nodeResolve({browser: true}), ...plugins, nodePolyfills()],
+    plugins: [nodeResolve({browser: true, preferBuiltins: true}), ...plugins, nodePolyfills()],
   },
   {
     input: `src/deno.js`,
@@ -38,7 +38,7 @@ export default [
             format: `esm`,
           },
     ],
-    plugins: [nodeResolve({browser: true}), ...plugins, nodePolyfills()],
+    plugins: [nodeResolve({browser: true, preferBuiltins: true}), ...plugins, nodePolyfills()],
   },
 ];
 
