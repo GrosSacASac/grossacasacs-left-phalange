@@ -1,5 +1,9 @@
 # changelog
 
+## 4.0.0
+
+ * Use npm 8
+
 ## 3.2.0
 
  * Add loadAsync, load for Deno
