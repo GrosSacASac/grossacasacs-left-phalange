@@ -1,12 +1,12 @@
 export {parseYaml};
 import pkg from 'js-yaml';
-const {safeLoad} = pkg;
+const {load} = pkg;
 
 const parseYaml = function (content, options) {
   const {filename} = {
     filename: ``,
     ...options,
   };
-  return safeLoad(content, {filename});
+  return load(content, {filename});
 };
 

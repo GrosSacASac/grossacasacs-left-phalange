@@ -1,6 +1,6 @@
 export {stringifyYaml};
 import pkg from 'js-yaml';
-const {safeDump} = pkg;
+const {dump} = pkg;
 
 const stringifyYaml = function (data, options) {
   const {pretty, sort} = {
@@ -15,7 +15,7 @@ const stringifyYaml = function (data, options) {
   } else {
     lineWidth = -1;
   } 
-  return safeDump(data, {
+  return dump(data, {
     noArrayIndent: !pretty,
     sortKeys: sort,
     lineWidth,
