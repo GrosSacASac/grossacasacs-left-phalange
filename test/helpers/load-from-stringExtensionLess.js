@@ -1,10 +1,10 @@
 export {loadFileFromStringExtensionLess};
-import {sync as temporaryWrite} from 'temp-write';
+import tempWrite from 'temp-write';
 import {parse as parsePath, format as formatPath} from 'path';
 import {load} from '../../src/index.js';
 
 const loadFileFromStringExtensionLess = function(string, fileName, options) {
-  const file = temporaryWrite(string, fileName);
+  const file = tempWrite.sync(string, fileName);
   // remove extension
   const parsed = parsePath(file);
   parsed.ext = ``;
