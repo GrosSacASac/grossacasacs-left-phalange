@@ -20,11 +20,11 @@ Node, Web, Deno
 
 ```js
 // Node
-import {parse, load, loadAsync, stringify, supportedExtensions} from '@grossacasacs/left-phalange'
+import {parse, load, loadAsync, stringify, supportedExtensions, openedSymbol} from '@grossacasacs/left-phalange'
 // Web
 import {parse, stringify} from '@grossacasacs/left-phalange' // should resolve to /dist/browser.es.js
 // Deno
-import {parse, stringify, load, loadAsync} from 'https://unpkg.com/@grossacasacs/left-phalange/dist/deno.es.js'
+import {parse, stringify, load, loadAsync, openedSymbol} from 'https://unpkg.com/@grossacasacs/left-phalange/dist/deno.es.js'
 ```
 
 ### load(file[, options])
@@ -43,10 +43,11 @@ Loading from a file
   - Data type of `file`
   - Should be one of `cjs`, `esm`, `ini`, `js`, `json`, `json5`, `toml`, `yaml`
 
-examples:
+#### examples
 
 ```js
-load('path/to/data')
+let data = load('path/to/data');
+const source = data[openedSymbol];
 
 load('path/to/data.json')
 

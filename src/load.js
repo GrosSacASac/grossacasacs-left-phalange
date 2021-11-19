@@ -6,6 +6,8 @@ import {parse as parseFile} from 'path';
 import * as loader from './loader/index.js';
 import { supportedExtensions } from './loader/index.js';
 import {getFileType} from './utils/get-file-type.js';
+import { tryAddSource } from './symbols.js';
+
 
 const prepareArgument = function(file, options = {}) {
   if (typeof options === `string`) {
@@ -22,19 +24,19 @@ const prepareArgument = function(file, options = {}) {
 
 };
 
-
 const load = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
-    return loader[type || extension](file);
+    return tryAddSource(file, loader[type || extension](file));
   }
 
-  // if file is config, try to open config.json or config.yaml or config.toml
   let result = new Error(`Unable to open ${file}`); // in case it cannot be found
   loader.all.some((specificLoader) => {
     try {
-      result = specificLoader(`${file}.${specificLoader.defaultExtension}`);
+      const source = `${file}.${specificLoader.defaultExtension}`;
+      result = specificLoader(source);
+      tryAddSource(source, result);
       return true; // stop trying when successful
     } catch (error) {
       // most likely a file not found error
@@ -48,12 +50,16 @@ const loadAsync = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
-    return loader[`${type || extension}Async`](file);
+    return (loader[`${type || extension}Async`](file)).then(result => {
+      return tryAddSource(file, result);
+    });
   }
 
-  // if file is config, try to open config.json or config.yaml or config.toml
   return Promise.any(loader.allAsync.map((specificAsyncLoader) => {
-      return specificAsyncLoader(`${file}.${specificAsyncLoader.defaultExtension}`);
+    const source = `${file}.${specificAsyncLoader.defaultExtension}`;
+    return specificAsyncLoader(source).then(result => {
+      return tryAddSource(source, result);
+    });
   })).catch((/*aggregateError*/) => {
     throw new Error(`Unable to open ${file}`);
   });

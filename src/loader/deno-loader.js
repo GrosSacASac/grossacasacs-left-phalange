@@ -8,6 +8,7 @@ import {parseJson} from '../parser/json.js';
 import {parseToml} from '../parser/toml.js';
 import {parseIni} from '../parser/ini.js';
 import {getFileType} from "../utils/get-file-type-deno.js";
+import { tryAddSource } from '../symbols.js';
   
 const parserToLoader = function (parser) {
     return function loader(filename, options) {
@@ -122,20 +123,22 @@ const load = function (file, options) {
     if (!loaders[used]) {
         return new Error(`unsupported "${used}"`);
     }
-    return loaders[used](file);
+    return tryAddSource(file, loaders[used](file));
   }
 
   // if file is config, try to open config.json or config.yaml or config.toml
   let result = new Error(`Unable to open ${file}`); // in case it cannot be found
+  let source;
   all.some((specificLoader) => {
     try {
-      result = specificLoader(`${file}.${specificLoader.defaultExtension}`);
+      source = `${file}.${specificLoader.defaultExtension}`;
+      result = specificLoader(source);
       return true; // stop trying when successful
     } catch (error) {
       // most likely a file not found error
     }
   });
-  return result;
+  return tryAddSource(source, result);
 };
 
 
@@ -143,12 +146,17 @@ const loadAsync = function (file, options) {
   const { extension, type} = prepareArgument(file, options);
 
   if (extension) {
-    return loaders[`${type || extension}Async`](file);
+    return loaders[`${type || extension}Async`](file).then(result => {
+      return tryAddSource(file, result);
+    });
   }
 
   // if file is config, try to open config.json or config.yaml or config.toml
   return Promise.any(allAsync.map((specificAsyncLoader) => {
-      return specificAsyncLoader(`${file}.${specificAsyncLoader.defaultExtension}`);
+      const source = `${file}.${specificAsyncLoader.defaultExtension}`;
+      return specificAsyncLoader(source).then(result => {
+        return tryAddSource(source, result);
+      });
   })).catch((/*aggregateError*/) => {
     throw new Error(`Unable to open ${file}`);
   });

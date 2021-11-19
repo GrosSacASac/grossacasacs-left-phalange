@@ -1,5 +1,10 @@
 # changelog
 
+
+## 4.1.0
+
+ * export openedSymbol, can be used to get the source filename after loading with load or loadAsync 
+
 ## 4.0.0
 
  * Use npm 8
