@@ -9,4 +9,4 @@ const tryAddSource = (source, result)  => {
         result[openedSymbol] = source;
     }
     return result;
-}
+};
