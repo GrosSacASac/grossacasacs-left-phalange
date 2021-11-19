@@ -19,6 +19,7 @@
         "lint-fix": "eslint --ignore-path .gitignore --fix .",
         "lint": "eslint --ignore-path .gitignore .",
         "test": "ava",
+        "test-verbose": "ava --serial --verbose",
         "test-coverage": "nyc ava",
         "try-deno": "deno run examples/deno/test.js",
         "prepublishOnly": "npm t && npm run clean && npm run build",
@@ -45,7 +46,8 @@
         "rollup-plugin-node-polyfills": "^0.2.1",
         "rollup-plugin-terser": "^7.0.2",
         "serve": "^12.0.1",
-        "temp-write": "^5.0.0"
+        "temp-write": "^5.0.0",
+        "utilsac": "^15.0.1"
     },
     "eslintConfig": {
         "extends": [

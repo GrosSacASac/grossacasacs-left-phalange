@@ -2,7 +2,7 @@ export {testRunner};
 import test from 'ava';
 import {parse, stringify} from '../../src/index.js';
 import {loadFileFromString} from './load-from-string.js';
-
+import { deepEqual } from 'utilsac/deep.js';
 
 const testRunner = function(testObject) {
   const {
@@ -34,7 +34,7 @@ const testRunner = function(testObject) {
   }
 
   test(`load(filename)`, (t) => {
-    t.deepEqual(loadFileFromString(string, filename), data);
+    t.true(deepEqual(loadFileFromString(string, filename), data));
   });
 
 
@@ -44,7 +44,7 @@ const testRunner = function(testObject) {
         return loadFileFromString(string, `data.xml`, type);
       });
     } else {
-      t.deepEqual(loadFileFromString(string, `data.xml`, type), data);
+      t.true(deepEqual(loadFileFromString(string, `data.xml`, type), data));
     }
   });
 
