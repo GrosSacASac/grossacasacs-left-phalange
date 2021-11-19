@@ -1,9 +1,10 @@
 # changelog
 
 
-## 4.1.0
+## 5.0.0
 
- * export openedSymbol, can be used to get the source filename after loading with load or loadAsync 
+ * export openedSymbol, can be used to get the source filename after loading with load or loadAsync
+ * Safety major version bump, you should not loop over Symbols but some libraries still do
 
 ## 4.0.0
 
