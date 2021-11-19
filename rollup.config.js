@@ -28,7 +28,7 @@ export default [
             format: `esm`,
           },
     ],
-    plugins: [nodeResolve({browser: true, preferBuiltins: true}), ...plugins, nodePolyfills()],
+    plugins: [nodeResolve({browser: true, preferBuiltins: false}), ...plugins, nodePolyfills()],
   },
   {
     input: `src/deno.js`,
@@ -38,7 +38,7 @@ export default [
             format: `esm`,
           },
     ],
-    plugins: [nodeResolve({browser: true, preferBuiltins: true}), ...plugins, nodePolyfills()],
+    plugins: [nodeResolve({browser: true, preferBuiltins: false}), ...plugins, nodePolyfills()],
   },
 ];
 
