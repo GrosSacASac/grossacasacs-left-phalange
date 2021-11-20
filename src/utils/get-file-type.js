@@ -1,5 +1,5 @@
 export { getFileType};
-import {extname} from 'path';
+import path from 'node:path';
 
 const fileTypes = {
   '.mjs': `esm`,
@@ -7,7 +7,7 @@ const fileTypes = {
 };
 
 const getFileType = function(file) {
-  const extension = extname(file);
+  const extension = path.extname(file);
 
   return fileTypes[extension] || extension.slice(1);
 };

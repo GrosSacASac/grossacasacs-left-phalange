@@ -1,6 +1,6 @@
 export {loadFileFromStringExtensionLess};
+import {parse as parsePath, format as formatPath} from 'node:path';
 import tempWrite from 'temp-write';
-import {parse as parsePath, format as formatPath} from 'path';
 import {load} from '../../src/index.js';
 
 const loadFileFromStringExtensionLess = function(string, fileName, options) {

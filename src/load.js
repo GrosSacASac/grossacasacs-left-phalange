@@ -2,7 +2,7 @@
 
 export {load, loadAsync, supportedExtensions};
 
-import {parse as parseFile} from 'path';
+import path from 'node:path';
 import * as loader from './loader/index.js';
 import { supportedExtensions } from './loader/index.js';
 import {getFileType} from './utils/get-file-type.js';
@@ -17,7 +17,7 @@ const prepareArgument = function(file, options = {}) {
   }
 
   const {type = getFileType(file)} = options;
-  const parsed = parseFile(file);
+  const parsed = path.parse(file);
   const extension = parsed.ext.slice(1); // slice(1) to remove the dot
 
   return { extension, type};

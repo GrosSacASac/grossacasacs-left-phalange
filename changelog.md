@@ -1,5 +1,8 @@
 # changelog
 
+## 5.0.1
+
+ * Use node: imports
 
 ## 5.0.0
 

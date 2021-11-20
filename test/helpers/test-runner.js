@@ -1,8 +1,8 @@
 export {testRunner};
 import test from 'ava';
+import { deepEqual } from 'utilsac/deep.js';
 import {parse, stringify} from '../../src/index.js';
 import {loadFileFromString} from './load-from-string.js';
-import { deepEqual } from 'utilsac/deep.js';
 
 const testRunner = function(testObject) {
   const {

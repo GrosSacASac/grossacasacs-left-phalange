@@ -1,9 +1,9 @@
 import test from 'ava';
 
+import { deepEqual } from "utilsac/deep.js";
 import {parse, openedSymbol} from '../src/index.js';
 import {loadFileFromString} from './helpers/load-from-string.js';
 import {loadFileFromStringExtensionLess} from './helpers/load-from-stringExtensionLess.js';
-import { deepEqual } from "utilsac/deep.js";
 
 test(`parse(data)`, (t) => {
   t.true(deepEqual(
