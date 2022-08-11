@@ -32,7 +32,7 @@
         "ini": "^3.0.0",
         "js-yaml": "^4.1.0",
         "json5": "^2.2.1",
-        "parse-json": "^6.0.1"
+        "parse-json": "^6.0.2"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^21.0.1",
