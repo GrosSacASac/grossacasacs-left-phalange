@@ -1,13 +1,12 @@
 {
   "name": "ui",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "scripts": {},
   "dependencies": {
     "@eroc/core": "^3.0.0",
-    "@grossacasacs/left-phalange": "*",
+    "@grossacasacs/left-phalange": "^5.1.1",
     "dom99": "^21.1.4"
   },
-  "devDependencies": {},
   "private": true
 }
