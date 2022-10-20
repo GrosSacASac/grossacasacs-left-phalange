@@ -2,8 +2,9 @@
 import cjs from '@rollup/plugin-commonjs';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import {dependencies} from './package.json';
+import packageJson from './package.json' assert {type: "json"};;
 
+const {dependencies} = packageJson;
 const plugins = [cjs()];
 
 const external = [`path`, `fs`, `fs/promises`, ...Object.keys(dependencies)];
