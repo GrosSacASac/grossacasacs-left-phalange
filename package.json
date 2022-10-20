@@ -49,6 +49,9 @@
         "temp-write": "^5.0.0",
         "utilsac": "^15.2.0"
     },
+    "engines": {
+      "node": ">=16.x"
+    },
     "eslintConfig": {
         "extends": [
             "red"
