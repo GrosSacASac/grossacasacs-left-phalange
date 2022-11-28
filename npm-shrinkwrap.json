@@ -31,6 +31,9 @@
                 "serve": "^14.0.1",
                 "temp-write": "^5.0.0",
                 "utilsac": "^15.2.0"
+            },
+            "engines": {
+                "node": ">=16.x"
             }
         },
         "node_modules/@babel/code-frame": {
