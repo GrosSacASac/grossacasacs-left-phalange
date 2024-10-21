@@ -1,11 +1,11 @@
-import { Core, useDefaultLogging } from "../../node_modules/@eroc/core/dist/core.es.js";
+import { createCore, useDefaultLogging } from "../../node_modules/@eroc/core/dist/core.es.js";
 
 import * as d from "./dependencies.js";
 
 import * as convert from "./convert.js";
 
 
-const core = new Core();
+const core = createCore();
 useDefaultLogging(core);
 
 
